@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.2 on win32)" generated="20230712 12:34:21.497" rpa="false" schemaversion="4">
+<suite id="s1" name="Gipsyy Testes" source="C:\automacaoGipsyy\poc_robotFramework\WebTesting\gipsyy_testes.robot">
+<test id="s1-t1" name="Caso de teste 01 - Realizar login" line="10">
+<kw name="Abrir o navegador" library="gipsyy_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230712 12:34:21.621" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230712 12:34:21.621" endtime="20230712 12:34:22.651"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230712 12:34:22.651" endtime="20230712 12:34:22.770"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:21.620" endtime="20230712 12:34:22.770"/>
+</kw>
+<kw name="Dado que acesse a tela de login" library="gipsyy_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230712 12:34:22.770" level="INFO">Opening url 'https://stgfrontbr.gipsyy.com.br/'</msg>
+<status status="PASS" starttime="20230712 12:34:22.770" endtime="20230712 12:34:23.881"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${MENU_USUARIO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 12:34:23.882" endtime="20230712 12:34:23.896"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${MENU_USUARIO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:23.897" level="INFO">Clicking element '//div[contains(@class,'UserMenu_user__1WKN6')]'.</msg>
+<status status="PASS" starttime="20230712 12:34:23.896" endtime="20230712 12:34:23.927"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:22.770" endtime="20230712 12:34:23.927"/>
+</kw>
+<kw name="Quando preencher com dados válidos e confirmar" library="gipsyy_resources">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230712 12:34:23.928" endtime="20230712 12:34:24.148"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>tiago.silva@gipsyy.com.br</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:24.149" level="INFO">Typing text 'tiago.silva@gipsyy.com.br' into text field 'css=#login_email'.</msg>
+<status status="PASS" starttime="20230712 12:34:24.149" endtime="20230712 12:34:24.269"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>Nova1010-</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:24.269" level="INFO">Typing password into text field 'css=#password'.</msg>
+<msg timestamp="20230712 12:34:24.290" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230712 12:34:24.337" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230712 12:34:24.269" endtime="20230712 12:34:24.337"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_INICIAR_SESSAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:24.338" level="INFO">Clicking element '//div[@class='float-right SignIn_signInBtn__YVMwv'][contains(.,'Iniciar Sessão')]'.</msg>
+<status status="PASS" starttime="20230712 12:34:24.337" endtime="20230712 12:34:24.374"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:23.927" endtime="20230712 12:34:24.374"/>
+</kw>
+<kw name="Então verifico login com sucesso" library="gipsyy_resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MENU_USUARIO_LOG}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 12:34:24.375" endtime="20230712 12:34:25.649"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:24.375" endtime="20230712 12:34:25.649"/>
+</kw>
+<kw name="Fechar o navegador" library="gipsyy_resources" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230712 12:34:25.649" endtime="20230712 12:34:27.733"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:25.649" endtime="20230712 12:34:27.733"/>
+</kw>
+<doc>Este teste verifica a funcionalidade de login do usuário</doc>
+<tag>login</tag>
+<status status="PASS" starttime="20230712 12:34:21.620" endtime="20230712 12:34:27.733"/>
+</test>
+<test id="s1-t2" name="Caso de teste 03 - Realizar login inválido com email diferente do cadastro" line="17">
+<kw name="Abrir o navegador" library="gipsyy_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230712 12:34:27.734" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230712 12:34:27.734" endtime="20230712 12:34:28.709"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230712 12:34:28.709" endtime="20230712 12:34:28.828"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:27.734" endtime="20230712 12:34:28.828"/>
+</kw>
+<kw name="Dado que acesse a tela de login" library="gipsyy_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230712 12:34:28.828" level="INFO">Opening url 'https://stgfrontbr.gipsyy.com.br/'</msg>
+<status status="PASS" starttime="20230712 12:34:28.828" endtime="20230712 12:34:29.958"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${MENU_USUARIO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 12:34:29.958" endtime="20230712 12:34:29.973"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${MENU_USUARIO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:29.973" level="INFO">Clicking element '//div[contains(@class,'UserMenu_user__1WKN6')]'.</msg>
+<status status="PASS" starttime="20230712 12:34:29.973" endtime="20230712 12:34:30.008"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:28.828" endtime="20230712 12:34:30.008"/>
+</kw>
+<kw name="Quando preencher email diferente e senha válida e confirmar" library="gipsyy_resources">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230712 12:34:30.009" endtime="20230712 12:34:30.231"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>joao@teste.com.br</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:30.231" level="INFO">Typing text 'joao@teste.com.br' into text field 'css=#login_email'.</msg>
+<status status="PASS" starttime="20230712 12:34:30.231" endtime="20230712 12:34:30.330"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>Nova1010-</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:30.331" level="INFO">Typing password into text field 'css=#password'.</msg>
+<msg timestamp="20230712 12:34:30.351" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230712 12:34:30.399" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230712 12:34:30.330" endtime="20230712 12:34:30.399"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_INICIAR_SESSAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:30.399" level="INFO">Clicking element '//div[@class='float-right SignIn_signInBtn__YVMwv'][contains(.,'Iniciar Sessão')]'.</msg>
+<status status="PASS" starttime="20230712 12:34:30.399" endtime="20230712 12:34:30.430"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:30.009" endtime="20230712 12:34:30.430"/>
+</kw>
+<kw name="Então verifico a mensagem &quot;Email não encontrado&quot;" library="gipsyy_resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MSG_EMAIL_NAO_ECONTRADO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 12:34:30.430" endtime="20230712 12:34:31.059"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:30.430" endtime="20230712 12:34:31.060"/>
+</kw>
+<kw name="Fechar o navegador" library="gipsyy_resources" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230712 12:34:31.060" endtime="20230712 12:34:33.115"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:31.060" endtime="20230712 12:34:33.115"/>
+</kw>
+<doc>Este teste verifica o retorno da mensagem ao inserir um email diferente do cadastrado</doc>
+<tag>login</tag>
+<status status="PASS" starttime="20230712 12:34:27.734" endtime="20230712 12:34:33.115"/>
+</test>
+<test id="s1-t3" name="Caso de teste 04 - Realizar login com senha inválida" line="24">
+<kw name="Abrir o navegador" library="gipsyy_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230712 12:34:33.116" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230712 12:34:33.116" endtime="20230712 12:34:34.097"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230712 12:34:34.097" endtime="20230712 12:34:34.215"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:33.116" endtime="20230712 12:34:34.215"/>
+</kw>
+<kw name="Dado que acesse a tela de login" library="gipsyy_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230712 12:34:34.215" level="INFO">Opening url 'https://stgfrontbr.gipsyy.com.br/'</msg>
+<status status="PASS" starttime="20230712 12:34:34.215" endtime="20230712 12:34:35.271"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${MENU_USUARIO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 12:34:35.271" endtime="20230712 12:34:35.285"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${MENU_USUARIO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:35.286" level="INFO">Clicking element '//div[contains(@class,'UserMenu_user__1WKN6')]'.</msg>
+<status status="PASS" starttime="20230712 12:34:35.285" endtime="20230712 12:34:35.316"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:34.215" endtime="20230712 12:34:35.316"/>
+</kw>
+<kw name="Quando preencher email e senha inválida e confirmar" library="gipsyy_resources">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230712 12:34:35.316" endtime="20230712 12:34:35.537"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>tiago.silva@gipsyy.com.br</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:35.537" level="INFO">Typing text 'tiago.silva@gipsyy.com.br' into text field 'css=#login_email'.</msg>
+<status status="PASS" starttime="20230712 12:34:35.537" endtime="20230712 12:34:35.656"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>Nova1010</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:35.657" level="INFO">Typing password into text field 'css=#password'.</msg>
+<msg timestamp="20230712 12:34:35.677" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230712 12:34:35.719" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230712 12:34:35.656" endtime="20230712 12:34:35.719"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_INICIAR_SESSAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:35.720" level="INFO">Clicking element '//div[@class='float-right SignIn_signInBtn__YVMwv'][contains(.,'Iniciar Sessão')]'.</msg>
+<status status="PASS" starttime="20230712 12:34:35.720" endtime="20230712 12:34:35.753"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:35.316" endtime="20230712 12:34:35.753"/>
+</kw>
+<kw name="Então verifico a mensagem &quot;Senha inválida&quot;" library="gipsyy_resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MSG_SENHA_INVALIDA}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 12:34:35.754" endtime="20230712 12:34:36.386"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:35.753" endtime="20230712 12:34:36.386"/>
+</kw>
+<kw name="Fechar o navegador" library="gipsyy_resources" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230712 12:34:36.387" endtime="20230712 12:34:38.449"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:36.387" endtime="20230712 12:34:38.449"/>
+</kw>
+<doc>Este teste verifica o retorno da mensagem ao inserir uma senha diferente da cadastrada</doc>
+<tag>login</tag>
+<status status="PASS" starttime="20230712 12:34:33.116" endtime="20230712 12:34:38.449"/>
+</test>
+<test id="s1-t4" name="Caso de teste 05 - Realizar logout" line="31">
+<kw name="Abrir o navegador" library="gipsyy_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230712 12:34:38.450" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230712 12:34:38.450" endtime="20230712 12:34:39.427"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230712 12:34:39.427" endtime="20230712 12:34:39.545"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:38.450" endtime="20230712 12:34:39.545"/>
+</kw>
+<kw name="Dado que esteja logado no site Gipsyy" library="gipsyy_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230712 12:34:39.545" level="INFO">Opening url 'https://stgfrontbr.gipsyy.com.br/'</msg>
+<status status="PASS" starttime="20230712 12:34:39.545" endtime="20230712 12:34:40.817"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${MENU_USUARIO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:40.817" level="INFO">Clicking element '//div[contains(@class,'UserMenu_user__1WKN6')]'.</msg>
+<status status="PASS" starttime="20230712 12:34:40.817" endtime="20230712 12:34:40.851"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230712 12:34:40.851" endtime="20230712 12:34:41.072"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>tiago.silva@gipsyy.com.br</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:41.073" level="INFO">Typing text 'tiago.silva@gipsyy.com.br' into text field 'css=#login_email'.</msg>
+<status status="PASS" starttime="20230712 12:34:41.073" endtime="20230712 12:34:41.193"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>Nova1010-</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:41.193" level="INFO">Typing password into text field 'css=#password'.</msg>
+<msg timestamp="20230712 12:34:41.213" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230712 12:34:41.260" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230712 12:34:41.193" endtime="20230712 12:34:41.260"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_INICIAR_SESSAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:41.260" level="INFO">Clicking element '//div[@class='float-right SignIn_signInBtn__YVMwv'][contains(.,'Iniciar Sessão')]'.</msg>
+<status status="PASS" starttime="20230712 12:34:41.260" endtime="20230712 12:34:41.294"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:39.545" endtime="20230712 12:34:41.294"/>
+</kw>
+<kw name="Quando clicar em sair no menu do usuário" library="gipsyy_resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MENU_USUARIO_LOG}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 12:34:41.294" endtime="20230712 12:34:41.923"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_USUARIO_LOG}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:41.924" level="INFO">Clicking element '//div[contains(@class,'UserMenu_user__1WKN6 UserMenu_loggedUser__2kskA')]'.</msg>
+<status status="PASS" starttime="20230712 12:34:41.923" endtime="20230712 12:34:41.943"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_SAIR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:41.944" level="INFO">Clicking element '//span[@class='UserMenu_text__SE8CN'][contains(.,'Sair')]'.</msg>
+<status status="PASS" starttime="20230712 12:34:41.943" endtime="20230712 12:34:41.969"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:41.294" endtime="20230712 12:34:41.969"/>
+</kw>
+<kw name="Então verifico logout com sucesso" library="gipsyy_resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MENU_USUARIO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 12:34:41.969" endtime="20230712 12:34:41.980"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:41.969" endtime="20230712 12:34:41.980"/>
+</kw>
+<kw name="Fechar o navegador" library="gipsyy_resources" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230712 12:34:41.980" endtime="20230712 12:34:44.052"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:41.980" endtime="20230712 12:34:44.052"/>
+</kw>
+<doc>Este teste verifica a funcionalidade de logout do usuário</doc>
+<tag>login</tag>
+<status status="PASS" starttime="20230712 12:34:38.449" endtime="20230712 12:34:44.052"/>
+</test>
+<test id="s1-t5" name="Caso de teste 03 - Validar mensagem de email inválido" line="39">
+<kw name="Abrir o navegador" library="gipsyy_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230712 12:34:44.053" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230712 12:34:44.053" endtime="20230712 12:34:45.038"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230712 12:34:45.038" endtime="20230712 12:34:45.156"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:44.053" endtime="20230712 12:34:45.156"/>
+</kw>
+<kw name="Dado que acesse a tela de login" library="gipsyy_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230712 12:34:45.156" level="INFO">Opening url 'https://stgfrontbr.gipsyy.com.br/'</msg>
+<status status="PASS" starttime="20230712 12:34:45.156" endtime="20230712 12:34:46.265"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${MENU_USUARIO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 12:34:46.266" endtime="20230712 12:34:46.281"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${MENU_USUARIO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:46.281" level="INFO">Clicking element '//div[contains(@class,'UserMenu_user__1WKN6')]'.</msg>
+<status status="PASS" starttime="20230712 12:34:46.281" endtime="20230712 12:34:46.313"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:45.156" endtime="20230712 12:34:46.313"/>
+</kw>
+<kw name="Quando preencher email inválido" library="gipsyy_resources">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230712 12:34:46.313" endtime="20230712 12:34:46.537"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>joseteste.com.br</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:46.537" level="INFO">Typing text 'joseteste.com.br' into text field 'css=#login_email'.</msg>
+<status status="PASS" starttime="20230712 12:34:46.537" endtime="20230712 12:34:46.632"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 12:34:46.633" level="INFO">Clicking element 'css=#password'.</msg>
+<status status="PASS" starttime="20230712 12:34:46.633" endtime="20230712 12:34:46.665"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:46.313" endtime="20230712 12:34:46.665"/>
+</kw>
+<kw name="Então verifico a mensagem &quot;Por favor digite um E-mail válido&quot;" library="gipsyy_resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MSG_EMAIL_INVALIDO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 12:34:46.666" endtime="20230712 12:34:46.679"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:46.665" endtime="20230712 12:34:46.679"/>
+</kw>
+<kw name="Fechar o navegador" library="gipsyy_resources" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230712 12:34:46.680" endtime="20230712 12:34:48.747"/>
+</kw>
+<status status="PASS" starttime="20230712 12:34:46.680" endtime="20230712 12:34:48.747"/>
+</kw>
+<doc>Este teste verifica o retorno da mensagem ao inserir um email diferente do cadastrado</doc>
+<tag>login</tag>
+<status status="PASS" starttime="20230712 12:34:44.053" endtime="20230712 12:34:48.747"/>
+</test>
+<doc>Esta suite testa o site da Gipsyy.com.br</doc>
+<status status="PASS" starttime="20230712 12:34:21.498" endtime="20230712 12:34:48.748"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="0" skip="0">login</stat>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Gipsyy Testes">Gipsyy Testes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
